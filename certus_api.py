@@ -28,9 +28,9 @@ import re
 
 def send_email(dokumenty_nazwa, *args, **kwargs):
         #Email Variables
-        SMTP_SERVER = 'oneumbrella.pl' #Email Server (don't change!)
+        SMTP_SERVER = '' #Email Server (don't change!)
         SMTP_PORT = 587 #Server Port (don't change!)
-        GMAIL_USERNAME = 'no-replay@oneumbrella.pl' #change this to match your gmail account
+        GMAIL_USERNAME = ' #change this to match your gmail account
         GMAIL_PASSWORD = ''  #change this to match your gmail app-password
         
         class Emailer:
@@ -64,17 +64,17 @@ def send_email(dokumenty_nazwa, *args, **kwargs):
 
         sender = Emailer()
 
-        sendTo = 'waldemar.lusiak@nksgroup.pl, remigiusz.zerbst@nksgroup.pl'
+        sendTo = ', '
         emailSubject = "Automatically generated email from CERTUS WEB MANAGER"
         emailContent = "Units in: \n\n {}".format(dokumenty_nazwa)
         # ,michal.sniegocki@nksgroup.pl,remigiusz.zerbst@nksgroup.pl
         #Sends an email to the "sendTo" address with the specified "emailSubject" as the subject and "emailContent" as the email content.
         sender.sendmail(sendTo, emailSubject, emailContent)
 
-login_certus = "NKSGroupSpzoo"
+login_certus = ""
 passw_certus = ""
-customer_code = "163785"
-url = "https://cloud.certus.software/"
+customer_code = ""
+url = "https://"
 
 #login_field = "/html/body/div[3]/div/div/div/div[1]/div[2]/form/ul/li[1]/input"
 #password_field = "/html/body/div[3]/div/div/div/div[1]/div[2]/form/ul/li[2]/input"
@@ -123,7 +123,7 @@ try:
 
     #path = "C:\\Users\\waldemar.lusiak\\Downloads"
 try:    
-    path = "C:\\Users\\walde\\Downloads"
+    path = "C:\\Users\\waldek\\Downloads"
     
     for filename in os.listdir(path):
         if re.match(r"certus_report.*\.csv", filename):
